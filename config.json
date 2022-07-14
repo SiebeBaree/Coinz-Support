@@ -1,0 +1,21 @@
+{
+    "serverId": "938177962698735616",
+    "ownerId": "643072638075273248",
+    "presence": {
+        "name": "coinzbot.xyz",
+        "type": "WATCHING",
+        "status": "online"
+    },
+    "footer": "Coinz Support | coinzbot.xyz",
+    "embedColor": "#DBA514",
+    "moderatorRoleId": "939800674235990056",
+    "ticket": {
+        "adminRoleId": "939802251822780446",
+        "categoryId": "940178895322370108",
+        "channelId": "939828324258152528"
+    },
+    "commandChannelId": "939831074798862356",
+    "rolesChannelId": "938733103248195584",
+    "logChannelId": "939824122240839720",
+    "defaultAvatarUrl": "https://cdn.discordapp.com/embed/avatars/0.png"
+}

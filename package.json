@@ -1,0 +1,24 @@
+{
+  "name": "coinzsupport",
+  "version": "1.0.0",
+  "description": "A discord bot made for the Coinz support server",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "coinz"
+  ],
+  "author": "SiebeBaree",
+  "license": "LICENSE",
+  "dependencies": {
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0",
+    "fs": "^0.0.1-security",
+    "moment": "^2.29.1",
+    "mongoose": "^6.2.0"
+  }
+}
