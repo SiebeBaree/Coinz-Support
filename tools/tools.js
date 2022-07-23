@@ -1,3 +1,6 @@
+const staffLogsChannelId = "939870751744462868";
+const { MessageEmbed } = require("discord.js");
+
 // milliseconds to time converter
 module.exports.msToTime = ms => {
     const days = Math.floor(ms / (1000 * 60 * 60 * 60));
@@ -17,3 +20,15 @@ module.exports.msToTime = ms => {
 module.exports.getRandomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min)
 };
+
+module.exports.sendLog = async (client, guild, title, moderator, extra) => {
+    const embed = new MessageEmbed()
+        .setTitle(title || "Log")
+        .setDescription(`**Moderator:** <@${moderator}>\n${extra}`)
+        .setColor(client.config.embedColor)
+        .setFooter({ text: client.config.footer })
+        .setTimestamp()
+
+    const channel = await guild.channels.fetch(staffLogsChannelId);
+    await channel.send({ embeds: [embed] });
+}
