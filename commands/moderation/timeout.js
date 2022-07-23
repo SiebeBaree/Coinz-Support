@@ -44,7 +44,7 @@ module.exports.help = {
                 },
                 {
                     name: "30 Minutes",
-                    value: 600
+                    value: 1800
                 },
                 {
                     name: "1 Hour",
