@@ -1,4 +1,3 @@
-const ticket = require('../tools/ticket');
 const role = require('../tools/role');
 
 module.exports = async (client, interaction) => {
@@ -32,19 +31,9 @@ module.exports = async (client, interaction) => {
             data.config = client.config;
 
             //Execute the command
-            cmd.execute(client, interaction, data);
+            await cmd.execute(client, interaction, data);
         } else if (interaction.isButton()) {
-            if (interaction.customId.includes('ticketCreate')) {
-                let btnId = interaction.customId.replace('ticketCreate', '');
-                let subject = btnId.replace('_', ' ');
-                ticket.createTicket(client, interaction, subject);
-            } else if (interaction.customId === 'ticketClose') {
-                ticket.closeTicket(client, interaction);
-            } else if (interaction.customId === 'ticketCloseConfirmYes') {
-                ticket.confirmCloseTicket(client, interaction);
-            } else if (interaction.customId === 'ticketCloseConfirmNo') {
-                ticket.confirmCancelTicket(client, interaction);
-            } else if (interaction.customId.includes('roles')) {
+            if (interaction.customId.includes('roles')) {
                 const roleId = interaction.customId.replace('roles', '');
                 const userAlreadyHasRole = await role.checkRole(interaction, roleId);
 
