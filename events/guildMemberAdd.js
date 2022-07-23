@@ -10,7 +10,7 @@ const giveRole = async (member, roldId) => {
 module.exports = async (client, member) => {
     // Check for suspicious accounts
     if (member.user.avatarURL() === null) await giveRole(member, '939840999977525248');
-    if (member.user.createdTimestamp <= Date.now() - (86400 * minimumDays)) await giveRole(member, '939840999977525248')
+    if (member.user.createdTimestamp >= Date.now() - (86400 * minimumDays)) await giveRole(member, '939840999977525248')
 
     // Send welcome message
     const embed = new MessageEmbed()
