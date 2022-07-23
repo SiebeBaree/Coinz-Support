@@ -14,7 +14,6 @@ client.event = new Collection();
 client.config = require('./config.json');
 client.logger = require('./tools/logger');
 client.tools = require('./tools/tools');
-client.database = require('./database/mongoose');
 
 async function init() {
     // Event handler
