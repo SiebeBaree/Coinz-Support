@@ -19,6 +19,6 @@
     "dotenv": "^16.0.0",
     "fs": "^0.0.1-security",
     "moment": "^2.29.1",
-    "mongoose": "^6.2.0"
+    "mongoose": "^6.5.1"
   }
 }
