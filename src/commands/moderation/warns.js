@@ -1,5 +1,5 @@
 const { MessageEmbed } = require("discord.js");
-const warnModel = require("../../database/schemas/warnings");
+const warnModel = require("../../schemas/warnings");
 
 module.exports.execute = async (client, interaction, data) => {
     const member = interaction.options.getMember("user") || interaction.user;
