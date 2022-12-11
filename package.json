@@ -1,24 +1,41 @@
 {
   "name": "coinzsupport",
-  "version": "1.0.0",
-  "description": "A discord bot made for the Coinz support server",
-  "main": "index.js",
+  "version": "2.0.0",
+  "description": "A discord bot made to help run the Coinz support server",
+  "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "test": "nodemon index.js",
-    "start": "node index.js"
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
+    "commands": "node src/scripts/commands.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiebeBaree/Coinz-Support.git"
   },
   "keywords": [
     "discord",
     "bot",
-    "coinz"
+    "coinz",
+    "discord.js",
+    "webhooks"
   ],
-  "author": "SiebeBaree",
-  "license": "LICENSE",
+  "author": "Siebe Baree",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/SiebeBaree/Coinz-Support/issues"
+  },
+  "homepage": "https://github.com/SiebeBaree/Coinz-Support#readme",
   "dependencies": {
-    "discord.js": "^13.9.0",
-    "dotenv": "^16.0.0",
+    "chalk": "^5.2.0",
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "fast-glob": "^3.2.12",
     "fs": "^0.0.1-security",
-    "moment": "^2.29.1",
-    "mongoose": "^6.5.1"
+    "moment": "^2.29.4",
+    "mongoose": "^6.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
