@@ -1,12 +1,17 @@
-const { MessageEmbed } = require('discord.js');
+import Event from '../structures/Event.js';
+import { WebhookClient } from 'discord.js';
 
-module.exports = async (client, member) => {
-    const embed = new MessageEmbed()
-        .setColor("RED")
-        .setAuthor({ name: `${member.user.tag} (${member.id})`, iconURL: `${member.user.avatarURL() || client.config.defaultAvatarUrl}` })
-        .setDescription(`• Username: <@${member.id}> (${member.id})\n• Account Created: <t:${parseInt(member.user.createdTimestamp / 1000)}:F> (<t:${parseInt(member.user.createdTimestamp / 1000)}:R>)\n• Date Joined: <t:${parseInt(member.joinedTimestamp / 1000)}:F> (<t:${parseInt(member.joinedTimestamp / 1000)}:R>)\n• Left On: <t:${parseInt(Date.now() / 1000)}:F> (<t:${parseInt(Date.now() / 1000)}:R>)`)
-        .setFooter({ text: client.config.footer })
-        .setTimestamp()
+export default class extends Event {
+    constructor(...args) {
+        super(...args);
+    }
 
-    await client.channels.cache.get(client.config.logChannelId).send({ embeds: [embed] });
+    async run(member) {
+        const webhookClient = new WebhookClient({ id: process.env.WEBHOOK_ID, token: process.env.WEBHOOK_TOKEN });
+        await webhookClient.send({
+            content: `<:member_leave:1051512749756264448> **${member.user.tag}** has left the server.`,
+            username: member.user.username,
+            avatarURL: member.user.displayAvatarURL()
+        });
+    }
 }
