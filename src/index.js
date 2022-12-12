@@ -19,7 +19,7 @@ const bot = global.bot = new Bot({
 
 // Connect to MongoDB Database
 connect(process.env.DATABASE_URI, {
-    dbName: "coinz_beta",
+    dbName: "coinz",
     useNewUrlParser: true,
     maxPoolSize: 100,
     minPoolSize: 5,
