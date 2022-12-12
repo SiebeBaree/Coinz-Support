@@ -57,6 +57,8 @@ export default class extends Event {
 
                 await interaction.deferUpdate();
                 await interaction.followUp({ content: content.length > 0 ? content : "No roles have been added.", ephemeral: true, target: interaction.user });
+            } else if (interaction.values.length === 0) {
+                await interaction.deferUpdate();
             }
         }
     }
